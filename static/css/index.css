@@ -125,6 +125,7 @@ body {
 
 .publication-hero-copy {
   max-width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,19 +175,14 @@ body {
 .publication-title {
     font-family: 'Inter', sans-serif !important;
     font-weight: 400 !important;
-    color: #91061b !important;
+    color: #fff !important;
     line-height: 1.08 !important;
-    margin-bottom: 1rem !important;
+    margin: 0 auto 1rem !important;
     letter-spacing: 0.005em;
     font-size: clamp(2.2rem, 5.8vw, 6rem);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
+    display: block;
+    width: 100%;
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
     white-space: normal;
     word-break: normal;
     overflow-wrap: normal;
@@ -195,25 +191,37 @@ body {
 
 .publication-title .title-line {
   display: block;
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
   text-align: center;
   white-space: nowrap;
   font-size: inherit;
   margin-left: auto;
   margin-right: auto;
+  color: #fff !important;
+  position: relative;
+  left: 0;
+  transform: none;
+}
+
+.publication-title .title-first-line {
+  display: inline-block;
+  width: auto;
+  white-space: nowrap;
+  transform: translateX(-0.9em);
 }
 
 .publication-title .title-emphasis {
   font-weight: 700;
+  color: #fff !important;
 }
 
 .publication-title .title-red {
-  color: #91061b;
+  color: #fff !important;
 }
 
 .publication-title .title-yellow {
-  color: #91061b;
+  color: #fff !important;
 }
 
 .publication-banner {
@@ -246,7 +254,7 @@ body {
     font-size: clamp(1.1rem, 2.2vw, 2.1rem);
     line-height: 1.3;
     text-align: center;
-    color: #000;
+    color: #fff !important;
 }
 
 .publication-venue {
@@ -272,7 +280,7 @@ body {
 }
 
 .publication-authors a {
-   color: #000 !important;
+   color: #fff !important;
    text-decoration: none;
    font-weight: 500;
    transition: var(--transition);
@@ -295,20 +303,21 @@ body {
 }
 
 .publication-authors a:hover {
-    color: #000 !important;
+    color: #fff !important;
 }
 
 .author-block {
   display: inline-block;
   margin-right: 0.9rem;
   white-space: nowrap;
+  color: #fff !important;
 }
 
 .affiliation-line,
 .equal-contrib {
   font-size: clamp(0.95rem, 1.65vw, 1.55rem);
   font-weight: 400;
-  color: #000;
+  color: #fff !important;
 }
 
 .publication-banner img {
