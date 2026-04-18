@@ -11,9 +11,9 @@
 
   <meta name="theme-color" content="#b45309">
   <!-- <meta name="theme-color" content="#2563eb"> -->
+  <link rel="preload" as="video" href="static/video/web.mp4" type="video/mp4" fetchpriority="high">
   <link rel="icon" type="image/x-icon" href="static/figure/hailab.ico">
   <link rel="apple-touch-icon" href="static/figure/hailab.ico">
-  <link rel="preload" as="video" href="static/video/web.mp4" type="video/mp4">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
 <body>
   <section class="hero is-link is-fullheight video publication-header" style="background-color: #000;">
     <div class="hero-video is-hidden-touch" style="height: 100%; width: 100%; min-width: 100%; min-height: 100%; position: absolute; inset: 0; background-color: #000;">
-      <video playsinline autoplay muted loop preload="auto" style="width: 100%; height: 100%; object-fit: cover; background-color: #000;">
+      <video playsinline autoplay muted loop preload="auto" fetchpriority="high" style="width: 100%; height: 100%; object-fit: cover; background-color: #000;">
         <source src="static/video/web.mp4" type="video/mp4">
       </video>
     </div>
@@ -65,9 +65,9 @@
     <div class="hero-body">
       <div class="container" style="width: 100%;">
         <div class="has-text-centered publication-hero-copy" style="margin-top: 7vh; color: #fff; width: 100%; display: flex; flex-direction: column; align-items: center;">
-          <h1 class="publication-title is-size-1-mobile">
-            <span class="title-line title-red title-first-line"><span class="title-emphasis">GazeVLA</span>: Learning Human Intention</span>
-            <span class="title-line title-red">for Robotic Manipulation</span>
+          <h1 class="publication-title is-size-1-mobile" style="font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: 1.08; margin: 0 auto 1rem; color: #fff; font-family: 'Inter', sans-serif; font-weight: 400;">
+            <span class="title-line title-red title-first-line" style="display: inline-block; white-space: nowrap;"><span class="title-emphasis">GazeVLA</span>: Learning Human Intention</span>
+            <span class="title-line title-red" style="display: block; white-space: nowrap;">for Robotic Manipulation</span>
           </h1>
           <div class="publication-authors has-text-centered" style="color: #fff;">
             <div class="author-line" style="color: #fff;">
@@ -97,8 +97,8 @@
           <figure class="image" style="margin-bottom: 1.5rem;">
             <img src="static/figure/teaser.png" alt="VLIA teaser" loading="lazy">
           </figure>
-          <div class="content has-text-justified">
-            <p class="abstract-tldr">
+          <div class="content has-text-justified" style="margin-top: 0.5rem;">
+            <p class="abstract-tldr" style="display: inline-block; width: 100%; box-sizing: border-box; margin-bottom: 0;">
               <strong>TL;DR:</strong> We propose a novel learning from human framework that explicitly models intention to capture the causal structure of manipulation behavior.
             </p>
           </div>
