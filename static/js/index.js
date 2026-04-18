@@ -117,6 +117,40 @@ function setupVideoCarouselAutoplay() {
     });
 }
 
+function fitPublicationTitleToTwoLines() {
+    const title = document.querySelector('.publication-title');
+    if (!title) return;
+
+    const lines = title.querySelectorAll('.title-line');
+    if (lines.length !== 2) return;
+
+    const baseFontSize = 100;
+    title.style.fontSize = baseFontSize + 'px';
+
+    const maxWidth = title.getBoundingClientRect().width;
+    const widths = Array.from(lines).map(line => line.scrollWidth);
+    const widestLine = Math.max(...widths);
+
+    if (!maxWidth || !widestLine) return;
+
+    const computedStyle = window.getComputedStyle(title);
+    const lineHeightFactor = parseFloat(computedStyle.lineHeight) / parseFloat(computedStyle.fontSize);
+    const availableHeight = title.parentElement ? title.parentElement.getBoundingClientRect().height * 0.32 : Infinity;
+    const maxFontByWidth = (maxWidth / widestLine) * baseFontSize;
+    const maxFontByHeight = Number.isFinite(availableHeight)
+        ? availableHeight / (2 * lineHeightFactor)
+        : maxFontByWidth;
+
+    const finalFontSize = Math.min(maxFontByWidth, maxFontByHeight, 96);
+    title.style.fontSize = `${Math.max(finalFontSize, 20)}px`;
+}
+
+function updatePublicationTitleSizing() {
+    requestAnimationFrame(() => {
+        fitPublicationTitleToTwoLines();
+    });
+}
+
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
 
@@ -136,5 +170,9 @@ $(document).ready(function() {
     
     // Setup video autoplay for carousel
     setupVideoCarouselAutoplay();
+    updatePublicationTitleSizing();
 
-})
+});
+
+window.addEventListener('load', updatePublicationTitleSizing);
+window.addEventListener('resize', updatePublicationTitleSizing);

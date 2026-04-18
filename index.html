@@ -94,13 +94,18 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-four-fifths has-text-centered">
-          <h2 class="title is-3 has-text-centered">Abstract</h2>
           <figure class="image" style="margin-bottom: 1.5rem;">
             <img src="static/figure/teaser.png" alt="VLIA teaser" loading="lazy">
           </figure>
           <div class="content has-text-justified">
+            <p class="abstract-tldr">
+              <strong>TL;DR:</strong> We propose a novel learning from human framework that explicitly models intention to capture the causal structure of manipulation behavior.
+            </p>
+          </div>
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <div class="content has-text-justified">
             <p>
-              Vision-Language-Action (VLA) models have achieved significant breakthroughs in robotic manipulation, but they heavily rely on large amounts of robot demonstrations. Although recent works have explored leveraging human data to alleviate this dependency, effectively extracting transferable knowledge remains a significant challenge due to the inherent human-robot embodiment gap. To address this, we argue that the intention underlying human actions can serve as a powerful intermediate representation to bridge this gap.
+              Embodied foundation models have achieved significant breakthroughs in robotic manipulation, but they heavily rely on large amounts of robot demonstrations. Although recent works have explored leveraging human data to alleviate this dependency, effectively extracting transferable knowledge remains a significant challenge due to the inherent human-robot embodiment gap. To address this, we argue that the intention underlying human actions can serve as a powerful intermediate representation to bridge this gap.
               In this paper, we introduce VLIA, a novel framework that explicitly learns and transfers human intention to facilitate robotic manipulation. Specifically, we model intention through gaze, as it naturally precedes physical actions and serves as an observable proxy for human intent. VLIA is first pretrained on a large-scale egocentric human dataset to capture human intention and its synergy with action, followed by finetuning on a small set of robot and human data. During inference, the model adopts a Chain-of-Thought reasoning paradigm, sequentially predicting intention before executing the action.
               Extensive evaluations including simulations and real-world experiments, long-horizon and fine-grained tasks, as well as few-shot learning and robustness assessments, demonstrate that our method outperforms existing baselines, exhibits exceptional generalization, and achieves state-of-the-art performance.
             </p>
@@ -118,7 +123,7 @@
           <img src="static/figure/dataset.jpg" alt="Dataset examples" loading="lazy">
         </figure>
         <p>
-          Our large-scale human egocentric dataset contains hand and gaze annotations with validity masks, unified coordinates, and diverse backgrounds, actions, and objects. Long videos are segmented into shorter clips, resulting in more than 150M frames.
+          We use large-scale human egocentric dataset for pretraining, which contains hand and gaze annotations with validity masks, unified coordinates, and diverse backgrounds, actions, and objects. Long videos are segmented into shorter clips, resulting in more than 150M frames.
         </p>
       </div>
     </div>
@@ -132,7 +137,7 @@
           <img src="static/figure/pipeline.png" alt="Pipeline overview" loading="lazy">
         </figure>
         <p>
-          VLIA takes egocentric images and language instructions as inputs and performs an intention-action reasoning chain. The model first predicts intention tokens and then generates continuous actions, with gaze modeled as 2D image coordinates.
+          Our model receives a task description, an egocentric observation, and the human or robot state as inputs. It first predicts discrete intention tokens, followed by continuous action generation via an intention–action reasoning chain. By explicitly modeling intention as an intermediate representation, the framework bridges high-level task understanding and low-level control. We instantiate intention as gaze, parameterized as 2D image coordinates.
         </p>
       </div>
     </div>
@@ -141,7 +146,9 @@
   <section class="section is-light" id="real-world">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Real-World Demonstrations</h2>
-      <p class="subtitle has-text-centered is-size-6">The green cross indicates the predicted intention.</p>
+      <p class="content has-text-justified" style="margin-bottom: 0.75rem; font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+        To evaluate cross-embodiment transfer and robustness in real-world deployment, we conduct extensive real-robot experiments covering gripper-based manipulation, dexterous manipulation, long-horizon tasks, and fine-grained operations. The green cross indicates the predicted intention.
+      </p>
       <div class="columns is-multiline">
         <div class="column is-full">
           <video autoplay muted loop playsinline controls width="100%" preload="metadata">
@@ -241,7 +248,7 @@
 
   <section class="section" id="simulation">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Simulation Experiment</h2>
+      <h2 class="title is-3 has-text-centered">Experiments</h2>
       <div class="table-container">
         <table class="table is-striped is-hoverable is-fullwidth">
           <thead>

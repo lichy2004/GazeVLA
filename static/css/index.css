@@ -179,7 +179,7 @@ body {
     line-height: 1.08 !important;
     margin: 0 auto 1rem !important;
     letter-spacing: 0.005em;
-    font-size: clamp(2.2rem, 5.8vw, 6rem);
+    font-size: clamp(2rem, 5vw, 4.8rem);
     display: block;
     width: 100%;
     max-width: 100%;
@@ -208,7 +208,7 @@ body {
   display: inline-block;
   width: auto;
   white-space: nowrap;
-  transform: translateX(-0.9em);
+  transform: none;
 }
 
 .publication-title .title-emphasis {
@@ -454,6 +454,20 @@ body {
 
 .content.has-text-justified p {
   margin-bottom: 1.5rem;
+}
+
+.abstract-tldr {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 4px solid #dc2626;
+  border-radius: var(--border-radius);
+  padding: 1rem 1.25rem;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.abstract-tldr strong {
+  color: #b91c1c;
 }
 
 /* Footer Improvements */
