@@ -19,7 +19,7 @@ We propose a novel learning-from-human framework that explicitly models intentio
 ## 📋 Table of Contents
 - [🛠 Environment Setup](#-environment-setup)
 - [🧩 Model Architecture](#-model-architecture)
-- [💡 Training & Evaluation](#-training--evaluation)
+- [💡 Experiments](#-experiments)
 - [🙏 Acknowledgements](#-acknowledgements)
 - [✍️ Citation](#️-citation)
 
