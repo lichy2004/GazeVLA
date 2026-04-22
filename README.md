@@ -13,7 +13,7 @@
 
 ---
 
-![](assets/teaser.png)
+![](figures/teaser.png)
 We propose a novel learning-from-human framework that explicitly models intention to capture the causal structure of manipulation behavior.
 
 ## 📋 Table of Contents
@@ -55,7 +55,7 @@ pip install -e .
 ## 🧩 Model Architecture
 
 <div align="center">
-<img src="./assets/pipeline.png" width="700" alt="VLIA Architecture">
+<img src="./figures/pipeline.png" width="700" alt="VLIA Architecture">
 </div>
 
 Our model receives a task description, an egocentric observation, and the human or robot state as inputs. It first predicts discrete intention tokens, followed by continuous action generation via an intention–action reasoning chain. By explicitly modeling intention as an intermediate representation, the framework bridges high-level task understanding and low-level control. We instantiate intention as gaze, parameterized as 2D image coordinates.
