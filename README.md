@@ -3,7 +3,7 @@
 <div align="center">
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-red?style=flat&logo=arxiv&logoColor=white)]()
-[![Project Page](https://img.shields.io/badge/Project%20Page-Website-yellow?style=flat&logo=googlechrome&logoColor=white)](https://lichy2004.github.io/GazeVLA/)
+[![Project Page](https://img.shields.io/badge/Project%20Page-Website-yellow?style=flat&logo=googlechrome&logoColor=white)](https://gazevla.github.io/)
 [![Data](https://img.shields.io/badge/Data-Dataset-green?style=flat&logo=databricks&logoColor=white)]()
 [![License](https://img.shields.io/badge/License-MIT-blue?style=flat&logo=opensourceinitiative&logoColor=white)](./LICENSE)
 
@@ -94,19 +94,14 @@ CUDA_VISIBLE_DEVICES=0 \
 
 ### 🧪 Evaluation
 
-You need to first download the official [LFA](https://github.com/Soltanilara/giava.git) repository, make some modifications, and then run the following command.
+You need to first download the official [LFA](https://github.com/Soltanilara/giava.git) repository, make some modifications.
 
-```bash
-python -m policy.IntentionVLA.eval \
-    --config_name lfa-cam1-chunk25 \
-    --task cube_transfer \
-    --ckpt_step 50000 \
-    --eval_options iid \
-    --n_episodes 50 \
-    --max_videos 50 \
-    --device cuda:0
-```
+## TODO
 
+The following features are planned for future implementation:
+
+- [ ] Pre-trained model checkpoints.
+- [ ] Evaluation scripts.
 
 ##  🙏 Acknowledgements
 
