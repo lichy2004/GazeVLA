@@ -91,13 +91,13 @@ CUDA_VISIBLE_DEVICES=0 \
 
 ### 🧪 Evaluation
 
-You need to first download the official [LFA](https://github.com/Soltanilara/giava.git) repository, make some modifications.
+You need to first download the official [LFA](https://github.com/Soltanilara/giava.git) repository, make some modifications. We will open-source this part of the code in the future.
 
 ## TODO
 
 The following features are planned for future implementation:
 
-- [√] Training code.
+- [x] Training code.
 - [ ] Pre-trained model checkpoints.
 - [ ] Evaluation scripts.
 
