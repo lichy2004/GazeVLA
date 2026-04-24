@@ -4,14 +4,13 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-red?style=flat&logo=arxiv&logoColor=white)]()
 [![Project Page](https://img.shields.io/badge/Project%20Page-Website-yellow?style=flat&logo=googlechrome&logoColor=white)](https://gazevla.github.io/)
-[![Data](https://img.shields.io/badge/Data-Dataset-green?style=flat&logo=databricks&logoColor=white)]()
+[![Video YouTube](https://img.shields.io/badge/Video-YouTube-FF0000?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=a1-jS9uWwAI&t=20s)
+[![Data](https://img.shields.io/badge/Data-Dataset-green?style=flat&logo=databricks&logoColor=white)](https://github.com/lichy2004/GazeVLA-Data)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=flat&logo=opensourceinitiative&logoColor=white)](./LICENSE)
 
 </div>
 
 </details>
-
----
 
 ![](figures/teaser.png)
 We propose a novel learning-from-human framework that explicitly models intention to capture the causal structure of manipulation behavior.
@@ -22,8 +21,6 @@ We propose a novel learning-from-human framework that explicitly models intentio
 - [💡 Experiments](#-experiments)
 - [🙏 Acknowledgements](#-acknowledgements)
 - [✍️ Citation](#️-citation)
-
----
 
 
 ## 🛠 Environment Setup
@@ -100,6 +97,7 @@ You need to first download the official [LFA](https://github.com/Soltanilara/gia
 
 The following features are planned for future implementation:
 
+- ✅ Training code.
 - [ ] Pre-trained model checkpoints.
 - [ ] Evaluation scripts.
 
