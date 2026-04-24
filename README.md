@@ -97,7 +97,7 @@ You need to first download the official [LFA](https://github.com/Soltanilara/gia
 
 The following features are planned for future implementation:
 
-- ✅ Training code.
+- [√] Training code.
 - [ ] Pre-trained model checkpoints.
 - [ ] Evaluation scripts.
 
