@@ -22,8 +22,8 @@ from accelerate import DeepSpeedPlugin
 from transformers import set_seed as transformers_set_seed
 from accelerate.utils import set_seed as accelerate_set_seed
 
-import openpi.models.IntentionVLA_config
-import openpi.models_pytorch.IntentionVLA_pytorch
+import openpi.models.VLIA_config
+import openpi.models_pytorch.VLIA_pytorch
 import openpi.shared.normalize as _normalize
 import openpi.training.config as _config
 import openpi.training.data_loader as _data

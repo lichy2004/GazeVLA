@@ -27,7 +27,7 @@ import openpi.training.droid_rlds_dataset as droid_rlds_dataset
 import openpi.training.optimizer as _optimizer
 import openpi.training.weight_loaders as weight_loaders
 import openpi.transforms as _transforms
-import openpi.models.IntentionVLA_config as IntentionVLA_config
+import openpi.models.VLIA_config as VLIA_config
 
 ModelType: TypeAlias = _model.ModelType
 # Work around a tyro issue with using nnx.filterlib.Filter directly.
@@ -865,7 +865,7 @@ _CONFIGS = [
     # lfa finetune
     TrainConfig(
         name="lfa-cam1-chunk25",
-        model=IntentionVLA_config.IntentionVLAConfig(
+        model=VLIA_config.VLIAConfig(
             action_dim=48,
             data_action_dim=21,
             action_horizon=25,
@@ -889,7 +889,7 @@ _CONFIGS = [
             decay_steps=50000,
             decay_lr=1e-5,
         ),
-        freeze_filter=IntentionVLA_config.IntentionVLAConfig().get_freeze_filter(),
+        freeze_filter=VLIA_config.VLIAConfig().get_freeze_filter(),
         weight_loader=weight_loaders.CheckpointWeightLoader("s3://openpi-assets/checkpoints/pi0_base/params"),
         pytorch_weight_path="path_to_checkpoint",
         num_train_steps=100000,

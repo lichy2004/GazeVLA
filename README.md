@@ -85,7 +85,7 @@ Please run the following command for training, and you can modify the configurat
 python scripts/compute_norm_stats.py --config-name lfa-cam1-chunk25
 CUDA_VISIBLE_DEVICES=0 \
     torchrun --nnodes=1 --nproc_per_node=1 --master_port=29500 \
-    scripts/train/train_human_gaze_accelerate.py lfa-cam1-chunk25 \
+    scripts/train/train.py lfa-cam1-chunk25 \
     --exp_name=lfa-cam1-chunk25
 ```
 

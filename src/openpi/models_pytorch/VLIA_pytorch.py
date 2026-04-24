@@ -14,7 +14,7 @@ import torch.nn.functional as F  # noqa: N812
 
 import openpi.models.gemma as _gemma
 import openpi.models_pytorch.preprocessing_human as _preprocessing
-from openpi.models_pytorch.IntentionVLA_gemma import PaliGemmaWithExpertModel
+from openpi.models_pytorch.VLIA_gemma import PaliGemmaWithExpertModel
 from openpi.models_pytorch.gaze_tokenizer import GazeTokenizer
 from openpi.utils.dataset_utils import generate_heatmap, visualize_heatmap, transform_images
 
@@ -89,7 +89,7 @@ def make_att_2d_masks(pad_masks, att_masks):
     return att_2d_masks & pad_2d_masks
 
 
-class IntentionVLA_pytorch(nn.Module):
+class VLIA_pytorch(nn.Module):
     def __init__(self, config):
         super().__init__()
         self.config = config
@@ -108,7 +108,7 @@ class IntentionVLA_pytorch(nn.Module):
         self.action_in_proj = nn.Linear(config.action_dim, action_expert_config.width)
         self.action_out_proj = nn.Linear(action_expert_config.width, config.action_dim)
 
-        # Gaze Chain of Thought
+        # Gaze COT
         paligemma_vocab_size = _gemma.PALIGEMMA_VOCAB_SIZE
         paligemma_hidden_size = paligemma_config.width
         self.gaze_tokenizer = GazeTokenizer(
@@ -149,7 +149,7 @@ class IntentionVLA_pytorch(nn.Module):
         self.paligemma_with_expert.paligemma.vision_tower.gradient_checkpointing = True
         self.paligemma_with_expert.gemma_expert.model.gradient_checkpointing = True
 
-        logging.info("Enabled gradient checkpointing for PI0Pytorch model")
+        logging.info("Enabled gradient checkpointing for VLIA model")
 
     def gradient_checkpointing_disable(self):
         """Disable gradient checkpointing."""
@@ -358,12 +358,7 @@ class IntentionVLA_pytorch(nn.Module):
         return embs, pad_masks, att_masks, adarms_cond
 
     def forward(self, observation, actions, noise=None, time=None):
-        """Do a full training forward pass and compute the loss (batch_size x num_steps x num_motors)
-        
-        如果启用 gaze_cot，则执行两阶段训练：
-        1. 第一阶段（Gaze CoT）：image+lang → 预测 gaze tokens → 计算 gaze_loss
-        2. 第二阶段（Action）：image+lang+gt_gaze → 预测 action → 计算 action_loss
-        """
+        """Run the training forward pass and compute the losses."""
         images, img_masks, lang_tokens, lang_masks, state, gaze, action_mask, gaze_mask \
             = self._preprocess_observation(observation, train=True)
         # images: list([bs, c, h, w]) 

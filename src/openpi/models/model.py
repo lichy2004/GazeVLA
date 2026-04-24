@@ -17,7 +17,7 @@ import orbax.checkpoint as ocp
 import safetensors
 import torch
 
-from openpi.models_pytorch import pi0_pytorch, IntentionVLA_pytorch
+from openpi.models_pytorch import pi0_pytorch, VLIA_pytorch
 from openpi.shared import image_tools
 import openpi.shared.array_typing as at
 
@@ -255,7 +255,7 @@ class BaseModelConfig(abc.ABC):
     def load_pytorch(self, train_config, weight_path: str):
         logger.info(f"train_config: {train_config}")
         if hasattr(train_config.model, 'gaze_cot'):
-            model = IntentionVLA_pytorch.IntentionVLA_pytorch(config=train_config.model)
+            model = VLIA_pytorch.VLIA_pytorch(config=train_config.model)
         else:
             model = pi0_pytorch.PI0Pytorch(config=train_config.model)
         safetensors.torch.load_model(model, weight_path)
