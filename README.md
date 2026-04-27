@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![arXiv](https://img.shields.io/badge/arXiv-Paper-red?style=flat&logo=arxiv&logoColor=white)]()
+[![arXiv](https://img.shields.io/badge/arXiv-Paper-red?style=flat&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2604.22615)
 [![Project Page](https://img.shields.io/badge/Project%20Page-Website-yellow?style=flat&logo=googlechrome&logoColor=white)](https://gazevla.github.io/)
 [![Video YouTube](https://img.shields.io/badge/Video-YouTube-FF0000?style=flat&logo=youtube&logoColor=white)](https://youtu.be/a1-jS9uWwAI)
 [![Data](https://img.shields.io/badge/Data-Dataset-green?style=flat&logo=databricks&logoColor=white)](https://github.com/lichy2004/GazeVLA-Data)
