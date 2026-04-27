@@ -112,7 +112,15 @@ If you find our work useful, please cite us:
 
 
 ```
-@article{}
+@misc{li2026gazevlalearninghumanintention,
+      title={GazeVLA: Learning Human Intention for Robotic Manipulation}, 
+      author={Chengyang Li and Kaiyi Xiong and Yuan Xu and Lei Qian and Yizhou Wang and Wentao Zhu},
+      year={2026},
+      eprint={2604.22615},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2604.22615}, 
+}
 ```
 
 ## License
