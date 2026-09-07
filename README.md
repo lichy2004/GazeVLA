@@ -10,7 +10,7 @@
 
 </div>
 
-🎉 **GazeVLA has been accepted to CoRL 2026!**
+This is the official data processing repository for "[GazeVLA: Learning Human Intention for Robotic Manipulation](https://arxiv.org/abs/2604.22615)," accepted at the 2026 Conference on Robot Learning (CoRL).
 
 </details>
 
