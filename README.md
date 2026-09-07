@@ -10,6 +10,8 @@
 
 </div>
 
+🎉 **GazeVLA has been accepted to CoRL 2026!**
+
 </details>
 
 ![](figures/teaser.png)
